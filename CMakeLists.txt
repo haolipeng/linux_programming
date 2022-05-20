@@ -1,7 +1,11 @@
-cmake_minimum_required(VERSION 3.22)
-project(linux_programming C)
+cmake_minimum_required(VERSION 3.16)
+project(linux_programming)
+set(CMAKE_CXX_STANDARD 14)
 
-set(CMAKE_C_STANDARD 99)
+include_directories("${PROJECT_BINARY_DIR}")
 
-add_executable(linux_programming __thread/main.c)
-TARGET_LINK_LIBRARIES(linux_programming pthread)
+include_directories("${PROJECT_SOURCE_DIR}/section0")
+
+add_subdirectory(section0)
+
+set(EXTRA_LIBS %{EXTRA_LIBS} section0)
