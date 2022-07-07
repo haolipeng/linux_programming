@@ -1,1 +1,1 @@
-add_executable(macro addDouble.cpp addTemp.h)
+add_executable(macro addDouble.h addTemp.h addInt.h main.c)
